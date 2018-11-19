@@ -35,6 +35,7 @@ class ResourceAPI:
 
     def add_resource(self, resource: dict):
         try:
+            # self.log("adding resource {} {} ".format(self.base_url, resource))
             request = requests.post(self.base_url, json=resource, auth=self.auth)
             request.raise_for_status()
         except HTTPError as e:

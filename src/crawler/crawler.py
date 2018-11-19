@@ -23,6 +23,7 @@ class Crawler:
     def crawl(self):
         feed = self.source_api.get_feed()
         for child in feed:
+            # self.log(child)
             resource_dict = self.parse(child)
             resource = self.validate(resource_dict)
             if resource:
